@@ -56,7 +56,7 @@
   <% elsif %w[freebsd].include?(node['platform_family']) -%>
   SSLMutex  file:/var/run/ssl_mutex
   <% else -%>
-  SSLMutex  file:/var/run/apache2/ssl_mutex
+  Mutex sysvsem default
   <% end -%>
 
   SSLHonorCipherOrder On
